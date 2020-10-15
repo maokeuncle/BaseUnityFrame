@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 
@@ -25,12 +26,13 @@ public class LoginView : UIBaseView
     {
         if (user.text == "admin" && password.text == "123456")
         {
-            tip.text = "登录成功！";
-            StartCoroutine(SuperTool.Delay(1,() => tip.text = ""));   
+            Addressables.LoadSceneAsync("TabelDemo");
+            Hide();
         }
         else
         {
             tip.text = "用户名或密码错误！";
+            StopCoroutine(SuperTool.Delay(1,() => tip.text = ""));
             StartCoroutine(SuperTool.Delay(1,() => tip.text = ""));
         }
     }

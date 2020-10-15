@@ -28,6 +28,6 @@ public class Entry : MonoBehaviour
         }
         Proxy.InitAsset();//实例化已经加载到内存中的ui资源
         
-        StartCoroutine(SuperTool.Delay(2,() => Proxy.LoginProxy.Show()));  
+        StartCoroutine(SuperTool.Delay(1,() => Proxy.LoginProxy.Show()));  
     }
 }
